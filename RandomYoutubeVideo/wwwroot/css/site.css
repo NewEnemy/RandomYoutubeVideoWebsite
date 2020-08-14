@@ -110,7 +110,7 @@ iframe {
 .NextVideo {
     position: absolute;
     text-align: center;
-    top: 0;
+    top: 90%;
     left: 32%;
     pointer-events: none;
 }

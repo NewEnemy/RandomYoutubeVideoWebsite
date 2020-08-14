@@ -6,7 +6,12 @@
 
 
 
-
+$(document).ready(function () {
+    $.get("/Test", null, function (data, textStatus) {
+        console.log("?");
+        console.log(data);
+    })
+});
 
 function PopcornAnimation(element,onelement) {
     console.log(element);

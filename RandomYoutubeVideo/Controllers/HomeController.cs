@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using RandomYoutubeVideo.Models;
@@ -32,6 +33,19 @@ namespace RandomYoutubeVideo.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+        [HttpGet("Test")]
+       
+        public IActionResult Test()
+        {
+            if (Request.Headers["Accept"].First().Contains("txt/html"))
+            {
+                return View("Index");
+            }
+     
+
+
+            return Json(new { id = 1, value = "new" });
         }
     }
 }
