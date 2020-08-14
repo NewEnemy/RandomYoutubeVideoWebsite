@@ -2,7 +2,16 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+
+    <div class="Viver-continer">
+
+        <iframe 
+                src="https://www.youtube.com/embed/tgbNymZ7vqY">
+        </iframe>
+
+    </div>
+    <div class="button_nextVideo">
+        <img Id="PopcornBox" Style="width:10rem;" src="~/images/PopcornBox.png" onmouseover="PopcornAnimation(this,true)" onmouseout="PopcornAnimation(this,false)" onclick="NextVideo(this)" onmouseup="PopcornSize(this,false)" onmousedown="PopcornSize(this,true)"/>
+        <img class="NextVideo" src="~/images/NextVideo.png"  />
+    </div>
+     
