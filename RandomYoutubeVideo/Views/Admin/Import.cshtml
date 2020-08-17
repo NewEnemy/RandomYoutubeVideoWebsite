@@ -1,0 +1,21 @@
+﻿@model RandomYoutubeVideo.Models.IFileModel
+@{
+    ViewData["Title"] = "Import";
+}
+
+<h1 class="text-center">Import</h1>
+
+<form class="form-group" asp-action="Import" method="post" enctype="multipart/form-data">
+    <span class="text-info">Select Text file with VideoIds to be inported to Database</span>
+    <br />
+
+    <label for="myfile"></label>
+
+    <input  asp-for="file" type="file" id="myfile" />
+
+    <span asp-validation-for="file"></span>
+
+    <div class="form-group">
+        <input asp-page-handler="Import" type="submit" value="Import Files" class="btn-warning" />
+    </div>
+</form>
