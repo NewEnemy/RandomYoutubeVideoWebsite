@@ -46,5 +46,9 @@ namespace RandomYoutubeVideo.Controllers
             }
             return Json(new { id = _videosIdModel.Video});
         }
+        public IActionResult DbTest()
+        {
+            return View("DataBaseModels/Index");
+        }
     }
 }
