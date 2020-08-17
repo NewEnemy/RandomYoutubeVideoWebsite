@@ -17,7 +17,7 @@ namespace RandomYoutubeVideo.Models
             set { }
         }
         List<string> VideoIds = new List<string>();
-        StreamReader reader;
+        
         public VideosIdModel()
         {
             string buffer;

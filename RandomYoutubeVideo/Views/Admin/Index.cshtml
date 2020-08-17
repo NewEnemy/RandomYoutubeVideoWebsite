@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1 class="text-center">Admin Panel</h1>
+<div class="wraper  " style="border:10px solid grey; padding:10px;">
+    <button class="btn-lg btn-info">Update Database</button>
+    <br />
+    <br />
+
+
+    <form style="border:2px solid black">
+        <div class="form-group">
+            <label for="ApiKey" class="control-label">Api Key</label>
+            <input class="form-control-sm" accept="text" id="ApiKey" />
+
+            <br />
+            <label for="QuerrySelect">How many Querries?</label>
+            <select class="form-control-sm" id="QuerrySelect">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+                <option>9</option>
+                <option>10</option>
+
+            </select>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="SerachForNewIDS" class="btn-warning btn-lg" />
+        </div>
+    </form>
+</div>

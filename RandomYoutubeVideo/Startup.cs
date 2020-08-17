@@ -59,7 +59,7 @@ namespace RandomYoutubeVideo
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=DataBaseModels}/{action=Index}/{id?}");
+                    pattern: "{controller=Admin}/{action=Index}/{id?}");
             });
         }
     }
