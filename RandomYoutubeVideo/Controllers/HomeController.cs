@@ -13,10 +13,12 @@ namespace RandomYoutubeVideo.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-
+        private readonly VideosIdModel _videosIdModel;
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
+            _videosIdModel = new VideosIdModel();
+            
         }
 
         public IActionResult Index()
@@ -42,10 +44,7 @@ namespace RandomYoutubeVideo.Controllers
             {
                 return View("Index");
             }
-     
-
-
-            return Json(new { id = 1, value = "new" });
+            return Json(new { id = _videosIdModel.Video});
         }
     }
 }

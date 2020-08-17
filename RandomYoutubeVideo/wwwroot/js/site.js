@@ -5,11 +5,12 @@
 
 
 
-
+var VideoId = "";
 $(document).ready(function () {
     $.get("/Test", null, function (data, textStatus) {
         console.log("?");
         console.log(data);
+        VideoId = data["id"]
     })
 });
 
@@ -53,4 +54,9 @@ function PopcornSize(element, mousedown) {
 
 function NextVideo(element) {
     document.getElementsByClassName("NextVideo")[0].style.transform = "rotate(345deg)";
+    $.get("/Test", null, function (data, textStatus) {
+
+        VideoId = data["id"];
+    })
+    $("#Myiframe").attr("src", "https://www.youtube.com/embed/"+VideoId);
 }
