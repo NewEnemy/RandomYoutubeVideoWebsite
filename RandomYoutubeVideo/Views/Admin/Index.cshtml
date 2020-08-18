@@ -5,19 +5,18 @@
 
 <h1 class="text-center">Admin Panel</h1>
 <div class="wraper  " style="border:10px solid grey; padding:10px;">
-    <button class="btn-lg btn-info">Update Database</button>
-    <br />
-    <br />
 
 
-    <form style="border:2px solid black" asp-action="SerachForNewIDS">
+
+    <form style="border:2px solid black" asp-action="SerachForNewIDS" method="get">
+        <h2 class="text-info">Generate new VideosID using Your Api Key</h2>
         <div class="form-group">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <label asp-for="Api" for="ApiKey" class="control-label">Api Key</label>
             <input asp-for="Api" class="form-control-sm" accept="text" id="ApiKey" />
             <span asp-validation-for="Api" class="text-danger"></span>
             <br />
-            <label asp-for="NumberOfQuerrys" for="QuerrySelect">How many Querries?</label>
+            <label asp-for="NumberOfQuerrys" for="QuerrySelect">How many Querries? ~50 resoults per querry</label>
             <select asp-for="NumberOfQuerrys" class="form-control-sm" id="QuerrySelect">
                 <option>1</option>
                 <option>2</option>
@@ -33,7 +32,7 @@
             </select>
         </div>
         <div class="form-group">
-          <input type="submit" value="SerachForNewIDS" class="btn-warning btn-lg" />
+          <input type="submit" value="Generate" class="btn-warning btn-lg" />
         </div>
     </form>
 

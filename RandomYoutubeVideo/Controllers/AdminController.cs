@@ -74,10 +74,16 @@ namespace RandomYoutubeVideo.Controllers
 
         }
 
-        [HttpPost]
-        public IActionResult SerachForNewIDS([Bind("Api","NumberOfQuerrys")] AdminModel adminModel)
+
+        public IActionResult SerachForNewIDS()
         {
             return View();
+        }
+
+        [HttpGet]
+        public IActionResult SerachForNewIDS([Bind("Api,NumberOfQuerrys")] AdminModel adminModel)
+        {
+            return Content(adminModel.Api);
         }
     }
 }
