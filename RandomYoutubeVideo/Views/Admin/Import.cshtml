@@ -1,6 +1,7 @@
 ﻿@model RandomYoutubeVideo.Models.IFileModel
 @{
     ViewData["Title"] = "Import";
+   string message = ViewData["Message"].ToString()??"serf";
 }
 
 <h1 class="text-center">Import</h1>
@@ -18,4 +19,10 @@
     <div class="form-group">
         <input asp-page-handler="Import" type="submit" value="Import Files" class="btn-warning" />
     </div>
+
+</form>
+<form class="form-group" asp-action="RemoveAll" method="post">
+    <label for="RemoveAllButton" class="text-danger">Clear All the entries!</label>
+    <input type="submit" class="btn-danger" value="Clear Database"/>
+    <span class="text-success">@message</span>
 </form>

@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using RandomYoutubeVideo.Data;
 using RandomYoutubeVideo.Models;
 
@@ -23,16 +24,54 @@ namespace RandomYoutubeVideo.Controllers
 
         public IActionResult Import()
         {
+            ViewData["Message"] = "";
+            return View("Import");
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> RemoveAll()
+        {
+            _context.Database.ExecuteSqlCommand("TRUNCATE TABLE[DataBaseModel]");
+            
+            await _context.SaveChangesAsync();
+            ViewData["Message"] = "All Cleared!!";
             return View("Import");
         }
         [HttpPost]
-        public IActionResult Import(Microsoft.AspNetCore.Http.IFormFile file)
+        public async Task< IActionResult> Import(Microsoft.AspNetCore.Http.IFormFile file)
         {
+            
+            DataBaseModel bufferModel = new DataBaseModel();
+            int Views = 0;
+            double Rating = 0.0;
+            
+            List<DataBaseModel> entryToAdd = new List<DataBaseModel>();
+            string buffer = "";
+            
             using (StreamReader reader = new StreamReader(file.OpenReadStream()))
             {
-                return Content(reader.ReadToEnd());
+                while (!reader.EndOfStream)
+                {
+                    
+                    buffer = await reader.ReadLineAsync();
+                    if (buffer != "")
+                    {
+                        bufferModel = new DataBaseModel { Id = 0, VidId = buffer, Views = Views, Rating = Rating };
+
+                        _context.Add(bufferModel);
+                        await _context.SaveChangesAsync();
+                    }
+
+
+                }
+
             }
-               
+
+           
+
+
+            return RedirectToAction("Index", "DataBaseModels");
+
         }
 
         [HttpPost]
