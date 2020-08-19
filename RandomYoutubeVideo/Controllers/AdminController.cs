@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using RandomYoutubeVideo.Data;
 using RandomYoutubeVideo.Models;
+using RandomYoutubeVideo.SideScripts;
 
 namespace RandomYoutubeVideo.Controllers
 {
@@ -83,6 +84,7 @@ namespace RandomYoutubeVideo.Controllers
         [HttpGet]
         public IActionResult SerachForNewIDS([Bind("Api,NumberOfQuerrys")] AdminModel adminModel)
         {
+            YoutubeVideoIdGenerator videoIdGenerator = new YoutubeVideoIdGenerator(adminModel.Api, adminModel.NumberOfQuerrys);
             return Content(adminModel.Api);
         }
     }
