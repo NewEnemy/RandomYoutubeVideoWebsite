@@ -14,12 +14,15 @@ namespace RandomYoutubeVideo.Controllers
     public class AdminController : Controller
     {
         private readonly DataBaseContext _context;
+        RandomWordsGenerator _wordsGenerator = new RandomWordsGenerator();
         public AdminController(DataBaseContext context)
         {
             _context = context;
         }
         public IActionResult Index()
         {
+            //return Content(_wordsGenerator.Next());
+
             return View();
         }
 

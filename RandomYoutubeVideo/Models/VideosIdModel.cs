@@ -21,7 +21,7 @@ namespace RandomYoutubeVideo.Models
         public VideosIdModel()
         {
             string buffer;
-            using (StreamReader reader = new StreamReader("wwwroot/tempData/YoutubeIDs.txt")) {
+            using (StreamReader reader = new StreamReader("tempData/YoutubeIDs.txt")) {
                 
                 while((buffer = reader.ReadLine()) != null)
                 {

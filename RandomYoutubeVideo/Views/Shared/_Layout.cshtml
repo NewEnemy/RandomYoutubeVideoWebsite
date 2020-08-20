@@ -8,25 +8,43 @@
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
 <body>
+
     <header>
+
         <div class="lights-continer">
             <div class="light"></div>
             <div class="light"></div>
             <div class="light"></div>
             <div class="light"></div>
         </div>
-        <div class="Logo-wraper">
-            <h2><span>R</span>aN<span>D</span>om <img src="~/images/youtube-logo-full-color.png" /> Video</h2>
-        </div>
-       
+
+
     </header>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <h2 class="Logo-wraper navbar-brand">Random <img src="~/images/youtube-logo-full-color.png" /> Video</h2>
+            </div>
+            <ul class="nav navbar-dark">
+                <li>
+                    <a href="#">SinUp</a>
+                </li>
+
+                <li>
+                    <a href="#">Login</a>
+                </li>
+
+            </ul>
+        </div>
+
+    </nav>
     <div class="container">
-            @RenderBody()
+        @RenderBody()
 
     </div>
 
-    
-        
+
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>

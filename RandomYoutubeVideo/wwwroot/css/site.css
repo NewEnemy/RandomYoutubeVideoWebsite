@@ -5,9 +5,31 @@ body {
     overflow:hidden;
 }
 
+.navbar {
+    background: linear-gradient(darkgrey,transparent 40%);
+}
+    .navbar a {
+        padding: 1rem;
+        margin: 0.5rem;
+        border: 1px solid grey;
+        
+    }
 
-
-.lights-continer {
+        .navbar a{
+            color:black;
+            font-weight:bold;
+            
+        }
+            .navbar a:hover {
+                background: linear-gradient(lightgrey,transparent 40%);
+                border-bottom: 2px solid lightgrey;
+                border-top: 2px solid lightgrey;
+                border-left-color: whitesmoke;
+                border-right-color: whitesmoke;
+                text-decoration: none;
+                color: whitesmoke;
+            }
+        .lights-continer {
     z-index: -1;
     position: absolute;
     
@@ -28,27 +50,29 @@ body {
         display: block;
         width: 40vw;
         height: 100vh;
-        background: radial-gradient(ellipse farthest-side at top,white, transparent 100%);
+        background: radial-gradient(ellipse farthest-side at top,lightgrey, transparent 100%);
     }
 
 
-Logo-wraper{
-
+Logo-wraper {
+    position: absolute;
+   
 }
-.Logo-wraper h2 {
+.Logo-wraper {
     text-align: center;
-    font-family:Arial;
+    font-family: Arial;
+    font-size: 1.1rem;
 }
 .Logo-wraper img{
     position:relative;
     top:-2px;
-    width: 80px;
+    width: 40px;
     height: auto;
 }
 Logo-wreaper span{
     font-style:italic;
     
-    font-size:1.7rem;
+  
 }
 
 .container {
